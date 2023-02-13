@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace breakableToy-client build",
+    "dev": "yarn workspace breakableToy-server dev",
+    "dev:debug": "yarn workspace breakableToy-server dev:debug",
+    "heroku-postbuild": "yarn workspace breakableToy-client build",
+    "start": "yarn workspace breakableToy-server start",
+    "dev:cypress": "yarn workspace breakableToy-server dev:e2e",
+    "e2e:open": "yarn workspace breakableToy-e2e e2e:open",
+    "e2e:run": "yarn workspace breakableToy-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^16.18"
+  }
+}
