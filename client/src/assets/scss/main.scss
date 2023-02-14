@@ -12,3 +12,62 @@
   -moz-tab-size: 4;
   tab-size: 4;
 }
+
+//Slider css
+.image {
+  object-fit:cover;
+  width: 100%;
+  height: 600px;
+}
+
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: grey;
+  z-index: 10;
+  user-select: none;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: grey;
+  z-index: 10;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.00);
+}
+
+.slider {
+  background-color: white;
+  height: max-content;
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+//footer 
+
+.footer {
+  background-color: grey;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
