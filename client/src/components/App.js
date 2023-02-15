@@ -7,6 +7,8 @@ import "../assets/scss/main.scss";
 import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
+import Home from "./Home";
+import Calender from "./Calender";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -28,7 +30,10 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <h2>Hello from react</h2>
+          <Home />
+        </Route>
+        <Route exact path="/calender">
+          <Calender />
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
