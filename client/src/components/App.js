@@ -8,7 +8,7 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import Home from "./Home";
-import Calender from "./Calender";
+import MyCalendar from "./MyCalendar";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -32,8 +32,8 @@ const App = (props) => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/calender">
-          <Calender />
+        <Route exact path="/myCalendar">
+          <MyCalendar />
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
