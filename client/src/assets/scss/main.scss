@@ -1,5 +1,6 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
+@import 'react-calendar/dist/Calendar.css';
 @include foundation-everything;
 // place global css here
 *,
