@@ -35,6 +35,33 @@ class User extends uniqueFunc(Model) {
     };
   }
 
+  static get relationMapping() {
+    const { Day, Entry } = require("./index.js")
+
+    return {
+      days: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Day,
+        join: {
+          from: "users.id",
+          through: {
+            from: "usersDays.userId",
+            to: "usersDays.dayId"
+          },
+          to: "days.id"
+        }
+      },
+      entries: {
+        relation: Model.HasManyRelation,
+        modelClass: Entry,
+        join: {
+          from: "users.id",
+          to: "entries.userId"
+        }
+      }
+    }
+  }
+
   $formatJson(json) {
     const serializedJson = super.$formatJson(json);
 
