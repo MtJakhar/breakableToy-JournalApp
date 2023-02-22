@@ -10,6 +10,7 @@ import TopBar from "./layout/TopBar";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
 import EntryList from "./EntryList";
+import EntryShowPage from "./EntryShowPage";
 
 
 const App = (props) => {
@@ -35,6 +36,7 @@ const App = (props) => {
           <Home />
         </Route>
         <Route exact path="/entries" component={EntryList} />
+        <Route exact path="/entries/:id" component={EntryShowPage} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/dashboard" component={Dashboard} />

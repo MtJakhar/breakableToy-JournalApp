@@ -30,8 +30,9 @@ entryRouter.post("/", async (req, res) => {
 
 entryRouter.get("/:id", async (req, res) => {
   try{
-    await Entry.query().deleteById(req.params.id)
-    return res.status(204).json({message: 'deletion success'})
+    const entry = await Entry.query().findById(req.params.id)
+    console.log(entry)
+    return res.status(200).json({ entry: entry })
   } catch(error) {
     return res.status(500).json({errors: error})
   }
