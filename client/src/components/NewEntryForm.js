@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import translateServerErrors from '../services/translateServerErrors.js'
 import ErrorList from './layout/ErrorList.js'
 import { Redirect } from 'react-router-dom'
-
+import { useHistory } from 'react-router-dom';
 
 const NewEntryForm = (prop) => {
   const [newEntry, setNewEntry] = useState({
@@ -11,6 +11,7 @@ const NewEntryForm = (prop) => {
     journalEntry: ""
   })
   const [shouldRedirect, setShouldRedirect] = useState(false)
+  const history = useHistory();
   const [errors, setErrors] = useState({})
 
   const postNewEntry = async(newEntryData) => {
@@ -52,6 +53,10 @@ const NewEntryForm = (prop) => {
     postNewEntry(newEntry)
     clearForm()
   }
+
+  const handleClick = () => {
+    history.push('/entries');
+  };
 
   const clearForm = () => {
     setNewEntry({
@@ -100,6 +105,7 @@ const NewEntryForm = (prop) => {
 
       <input className='button' type='submit' value="Submit" />
       <input className='button' type='button' value='Clear Form' onClick={clearForm} />
+      <button className='button' onClick={handleClick}>Back</button>
     </form>
   )
 }
