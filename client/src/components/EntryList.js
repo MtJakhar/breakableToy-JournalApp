@@ -21,6 +21,23 @@ const EntryList = (props) => {
       console.error(`Error in fetch: ${error.message}`)
     }
   }
+
+  const deleteEntry = async (id) => {
+    try{
+      const response = await fetch(`/api/v1/entry/${id}`, {
+        method: 'DELETE',
+        headers: new Headers({
+          "Content-Type": "application/json"
+        })
+      })
+      if (!response.ok) {
+        throw new Error(`Error in fetch: ${error.message}`)
+      }
+      setEntryList(entryList.filter(entry => entry.id !== id))
+    } catch(error) {
+      console.error(`Error in fetch: ${error.message}`)
+    }
+  }
  
   useEffect(() => {
     getEntries()
@@ -31,6 +48,10 @@ const EntryList = (props) => {
       <EntryListItem
         key={entry.id}
         entry={entry}
+        currentUser={currentUser}
+        deleteEntry={deleteEntry}
+        entryList={entryList}
+        setEntryList={entryList}
       />
     )
   })
