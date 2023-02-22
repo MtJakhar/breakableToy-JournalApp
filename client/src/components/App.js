@@ -9,7 +9,7 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
-import Entries from "./Entries";
+import EntryList from "./EntryList";
 
 
 const App = (props) => {
@@ -34,10 +34,10 @@ const App = (props) => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/users/:id" component={Dashboard} />
-        <Route exact path="/entries" component={Entries} />
+        <Route exact path="/entries" component={EntryList} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+        <Route exact path="/dashboard" component={Dashboard} />
       </Switch>
     </Router>
   );
