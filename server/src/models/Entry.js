@@ -8,18 +8,18 @@ class Entry extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["userId", "dayId"],
+      required: ["userId", "date", "journalEntry" ],
       properties: {
         userId: {type: ["integer", "string"]},
-        dayId: {type: ["integer", "string"]},
-        journalEntry: {type: ["string"]},
-        weatherData: {type: ["string"]}
+        date: {type: "string" },
+        title: {type: "string" },
+        journalEntry: {type: "string" },
       }
     }
   }
   
   static get relationMappings() {
-    const { User, Day } = require("./index.js")
+    const { User } = require("./index.js")
     return {
       user: {
         relation: Model.BelongsToOneRelation,
@@ -27,14 +27,6 @@ class Entry extends Model {
         join: {
           from: "entries.userId",
           to: "users.id"
-        }
-      },
-      day: {
-        relation: Model.BelongsToOneRelation,
-        modelClass: Day,
-        join: {
-          from: "entries.dayId",
-          to: "days.id"
         }
       }
     }
