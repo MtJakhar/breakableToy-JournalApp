@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import EntryListItem from './EntryListItem'
+import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 const EntryList = (props) => {
-
+  const currentUser = props.currentUser
   const [entryList, setEntryList] = useState([])
+  const history = useHistory();
 
   const getEntries = async () => {
     try {
@@ -32,9 +35,20 @@ const EntryList = (props) => {
     )
   })
 
+  const handleClick = () => {
+    history.push('/dashboard');
+  };
+
+  let link
+  if (currentUser) {
+    link = <Link className="button" to='/entries/new'>Add New Entry</Link>
+  }
+
   return (
     <div>EntryList
       {entriesItems}
+      {link}
+      <button className='button' onClick={handleClick}>Dashboard</button>
     </div>
     
   )
