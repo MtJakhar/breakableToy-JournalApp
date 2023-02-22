@@ -82,7 +82,7 @@ const RegistrationForm = () => {
   };
 
   if (shouldRedirect) {
-    location.href = "/";
+    location.href = "/dashboard"
   }
 
   return (

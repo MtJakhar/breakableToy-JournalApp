@@ -8,10 +8,10 @@ class Day extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["date"],
+      required: ["day"],
       properties: {
         userId: {type: ["integer", "string"]},
-        date: {type: ["string"]}
+        day: {type: ["string"], minLength: 1 }
       }
     }
   }

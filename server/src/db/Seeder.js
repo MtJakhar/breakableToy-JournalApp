@@ -13,13 +13,13 @@ class Seeder {
     let user1 = await User.query().findById(1)
     let user2 = await User.query().findById(2)
 
-    let date1 = await Day.query().findById(1)
-    let date2 = await Day.query().findById(2)
+    let day1 = await Day.query().findById(1)
+    let day2 = await Day.query().findById(2)
 
-    await UsersDay.query().insert({userId: user1.id, dayId: date1.id})
+    await UsersDay.query().insert({userId: user1.id, dayId: day1.id})
 
-    await Entry.query().insert({dayId:date1.id, userId:user2.id, journalEntry:"cool entry over here", weatherData:"sunny"})
-    await Entry.query().insert({dayId:date2.id, userId:user2.id, journalEntry:"cool entry over here not really", weatherData:"sunny it is not"})
+    await Entry.query().insert({dayId:day1.id, userId:user2.id, journalEntry:"cool entry over here", weatherData:"sunny"})
+    await Entry.query().insert({dayId:day2.id, userId:user2.id, journalEntry:"cool entry over here not really", weatherData:"sunny it is not"})
 
     console.log("Done!")
     await connection.destroy()
