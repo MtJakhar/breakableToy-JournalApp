@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const EntryListItem = ({ entry }) => {
   return (
     <div>
-      <h3>{entry.title}</h3>
+      <Link to={`/entries/${entry.id}`}>{entry.title}</Link>
       <p>{entry.date}</p>
       <p>{entry.userId}</p>
     </div>
