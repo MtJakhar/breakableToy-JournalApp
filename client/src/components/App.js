@@ -11,6 +11,7 @@ import Home from "./Home";
 import Dashboard from "./Dashboard";
 import EntryList from "./EntryList";
 import EntryShowPage from "./EntryShowPage";
+import NewEntryForm from "./NewEntryForm";
 
 
 const App = (props) => {
@@ -35,7 +36,12 @@ const App = (props) => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/entries" component={EntryList} />
+        
+        <Route exact path="/entries">
+          <EntryList currentUser={currentUser} />
+        </Route>
+        <Route exact path="/entries/new" component={NewEntryForm} />
+        
         <Route exact path="/entries/:id" component={EntryShowPage} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />

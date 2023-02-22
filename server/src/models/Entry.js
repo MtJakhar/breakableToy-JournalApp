@@ -11,9 +11,9 @@ class Entry extends Model {
       required: ["userId", "date", "journalEntry" ],
       properties: {
         userId: {type: ["integer", "string"]},
-        date: {type: "string" },
-        title: {type: "string" },
-        journalEntry: {type: "string" },
+        date: {type: "string", minLength: 1 },
+        title: {type: "string", minLength: 1 },
+        journalEntry: {type: "string", minLength: 1 },
       }
     }
   }

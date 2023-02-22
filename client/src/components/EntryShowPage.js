@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
 
 const EntryShowPage = (props) => {
-  const [entry, setEntry] = useState({
-    date: "p",
-    title: "p",
-    journalEntry: "p"
-  })
+  const [entry, setEntry] = useState({})
+  const history = useHistory();
 
   const getEntry = async () => {
     try{
@@ -26,15 +24,25 @@ const EntryShowPage = (props) => {
     getEntry()
   }, [])
 
+  const handleClick = () => {
+    history.push('/entries');
+  };
 
   return (
     <div>
-      <h1>EntryShowPage</h1>
-      <h2>{entry.title}</h2>
-      <h4>{entry.date}</h4>
-      <p>{entry.journalEntry}</p>
+      <div>
+        <h1>EntryShowPage</h1>
+        <h2>{entry.title}</h2>
+        <h4>{entry.date}</h4>
+        <p>{entry.journalEntry}</p>
+      </div>
+
+      <button className="button" type="button" onClick={handleClick}>Return to Entries</button>
+
     </div>
   )
+
+  
 }
 
 export default EntryShowPage
