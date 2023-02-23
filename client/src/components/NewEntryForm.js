@@ -71,7 +71,7 @@ const NewEntryForm = (prop) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="newForm" onSubmit={handleSubmit}>
       <ErrorList errors={errors} />
       <label htmlFor='date'>
         Date:
@@ -95,17 +95,26 @@ const NewEntryForm = (prop) => {
 
       <label htmlFor='journalEntry'>
         Journal Entry:
-        <input 
+        {/* <input 
           type='text'
           name='journalEntry'
           onChange={handleInputChange}
           value={newEntry.journalEntry}
-        />
+        /> */}
+        <textarea
+          className='textarea' 
+          name='journalEntry'
+          onChange={handleInputChange}
+          rows="50"
+          cols="70"
+          value={newEntry.journalEntry}
+        ></textarea>
       </label>
-
-      <input className='button' type='submit' value="Submit" />
-      <input className='button' type='button' value='Clear Form' onClick={clearForm} />
-      <button className='button' onClick={handleClick}>Back</button>
+      <div className='newFormBtns'>
+        <input className='button btn' type='submit' value="Submit" />
+        <input className='button btn' type='button' value='Clear Form' onClick={clearForm} />
+        <button className='button btn' onClick={handleClick}>Back</button>
+      </div>
     </form>
   )
 }

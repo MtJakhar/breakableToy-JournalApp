@@ -45,7 +45,7 @@ const EntryList = (props) => {
 
   const entriesItems = entryList.map(entry => {
     return (
-      <div className='cell small-4'>
+      <div className='entryListItem cell small-12 medium-4 callout secondary'>
       <EntryListItem
         key={entry.id}
         entry={entry}
@@ -68,17 +68,17 @@ const EntryList = (props) => {
 
   let link
   if (currentUser) {
-    link = <button className='button new-entry-btn' onClick={handleNewEntryClick}>Add New Entry</button>
+    link = <button className='button btn' onClick={handleNewEntryClick}>Add New Entry</button>
   }
 
   return (
-    <>
-      <div className="grid-x">
+    <div className='entryContainer'>
+      <div className="entryList grid-x grid-margin-x">
         {entriesItems}
       </div>
       {link}
-      <button className='button dash-btn' onClick={handleClick}>Dashboard</button>
-    </>
+      <button className='button btn' onClick={handleClick}>Dashboard</button>
+    </div>
     
   )
 }
