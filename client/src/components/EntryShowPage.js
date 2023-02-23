@@ -31,9 +31,8 @@ const EntryShowPage = (props) => {
   return (
     <div>
       <div>
-        <h1>EntryShowPage</h1>
-        <h2>{entry.title}</h2>
-        <h4>{entry.date}</h4>
+        <h2>{entry.date}</h2>
+        <h4>{entry.title}</h4>
         <p>{entry.journalEntry}</p>
       </div>
 

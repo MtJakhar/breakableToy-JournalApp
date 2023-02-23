@@ -47,5 +47,23 @@ entryRouter.delete("/:id", async (req, res) => {
   }
 })
 
+entryRouter.patch('/:id', async (req, res) => {
+  const body = req.body
+  body.id = req.params.id
+  try {
+    const editedEntry = await Entry.query().patchAndFetchById(body.id, {
+      date: body.date,
+      title: body.title,
+      journalEntry: body.journalEntry
+    })
+    return res.status(200).json({ editedEntry: editedEntry })
+  } catch(error) {
+    if (error instanceof ValidationError) {
+      return res.status(422).json({ errors: error.data })
+    }
+    return res.status(500).json({ errors: error })
+  }
+})
+
 
 export default entryRouter;

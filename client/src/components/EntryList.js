@@ -45,14 +45,16 @@ const EntryList = (props) => {
 
   const entriesItems = entryList.map(entry => {
     return (
+      <div className='cell small-4'>
       <EntryListItem
         key={entry.id}
         entry={entry}
         currentUser={currentUser}
         deleteEntry={deleteEntry}
         entryList={entryList}
-        setEntryList={entryList}
+        setEntryList={setEntryList}
       />
+      </div>
     )
   })
 
@@ -60,17 +62,23 @@ const EntryList = (props) => {
     history.push('/dashboard');
   };
 
+  const handleNewEntryClick = () => {
+    history.push('/entries/new')
+  }
+
   let link
   if (currentUser) {
-    link = <Link className="button" to='/entries/new'>Add New Entry</Link>
+    link = <button className='button new-entry-btn' onClick={handleNewEntryClick}>Add New Entry</button>
   }
 
   return (
-    <div>EntryList
-      {entriesItems}
+    <>
+      <div className="grid-x">
+        {entriesItems}
+      </div>
       {link}
-      <button className='button' onClick={handleClick}>Dashboard</button>
-    </div>
+      <button className='button dash-btn' onClick={handleClick}>Dashboard</button>
+    </>
     
   )
 }
