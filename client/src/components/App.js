@@ -41,7 +41,6 @@ const App = (props) => {
           <EntryList currentUser={currentUser} />
         </Route>
         <Route exact path="/entries/new" component={NewEntryForm} />
-        
         <Route exact path="/entries/:id" component={EntryShowPage} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />

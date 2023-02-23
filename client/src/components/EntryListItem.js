@@ -29,17 +29,20 @@ const EntryListItem = ({ entry, currentUser, deleteEntry, entryList, setEntryLis
   let deleteButton
   let editButton
   if (currentUser && currentUser.id === entry.userId){
-    deleteButton = <button className='button delete-btn' onClick={handleDelete}>Delete</button>
-    editButton = <button className='button edit-btn' onClick={handleEdit}>Edit</button>
+    deleteButton = <button className='button btn' onClick={handleDelete}>Delete</button>
+    editButton = <button className='button btn' onClick={handleEdit}>Edit</button>
   }
   return (
     <div className='entryListItem'>
       <Link to={`/entries/${entry.id}`}>{entry.title}</Link>
       <p>{entry.date}</p>
-      <p>User {entry.userId}</p>
-      {deleteButton}
-      {editButton}
-      {editForm}
+      <p>{entry.journalEntry}</p>
+
+      <div>
+        {deleteButton}
+        {editButton}
+        {editForm}
+      </div>
     </div>
   )
 }

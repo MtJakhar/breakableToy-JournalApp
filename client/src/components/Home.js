@@ -17,28 +17,28 @@ const Home = () => {
       </div>
       <div className='textContainer section'>
         <h3>Why you should Journal</h3>
-        <div className='grid-x'>
-          <div className='cell small-4'>
+        <div className='grid-x grid-margin-x'>
+          <div className='cell small-12 medium-4'>
             <h5>Reflection:</h5>
             <p>Writing in a journal allows for self-reflection, helping to process thoughts and feelings.</p>
           </div>
-          <div className='cell small-4'>
+          <div className='cell small-12 medium-4'>
             <h5>Creativity:</h5>
             <p>Journaling can stimulate creativity, allowing for new ideas to flow freely.</p>
           </div>
-          <div className='cell small-4'>
+          <div className='cell small-12 medium-4'>
             <h5>Clarity:</h5>
             <p>Journaling can bring clarity to confusing or overwhelming situations, helping to organize thoughts and emotions.</p>
           </div>
-          <div className='cell small-4'>
+          <div className='cell small-12 medium-4'>
             <h5>Gratitude:</h5>
             <p>Writing down things to be grateful for can boost mood and improve overall well-being.</p>
           </div>
-          <div className='cell small-4'>
+          <div className='cell small-12 medium-4'>
             <h5>Memory:</h5>
             <p>Journaling can serve as a record of important memories, experiences, and personal growth.</p>
           </div>
-          <div className='cell small-4'>
+          <div className='cell small-12 medium-4'>
             <h5>Stress Reduction:</h5>
             <p>Journaling has been shown to reduce stress levels by providing a healthy outlet for emotional expression.</p>
           </div>
