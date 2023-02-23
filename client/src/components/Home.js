@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <ImageSlider slides={SliderData} />
-      <div className='textContainer'>
+      <div className='textContainer section'>
         <h3>What are you writing for?</h3>
         <p> Whether youre looking for a tool to record your daily emotions and activities in a reflective journal, keep track of milestones in a food diary or pregnancy journal, or even record your dreams in a dream journal, MyJournal has you covered.</p>
         <p>MyJournal gives you all the tools you need to focus on the ideas you want to preserve, rather than the process of writing itself.</p>
@@ -15,7 +15,7 @@ const Home = () => {
         Get Started
         </Link>
       </div>
-      <div className='textContainer'>
+      <div className='textContainer section'>
         <h3>Why you should Journal</h3>
         <div className='grid-x'>
           <div className='cell small-4'>

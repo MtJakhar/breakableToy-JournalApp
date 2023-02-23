@@ -22,6 +22,12 @@ body {
 .textContainer {
   text-align: center;
 }
+
+.section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+  
 //Home Slider css
 .image {
   object-fit:cover;
@@ -128,3 +134,34 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+//Entries
+
+.entryList {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+}
+
+.entryL {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.entryListItem {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.dash-btn {
+  margin: 10px;
+}
+
+.new-entry-btn {
+  margin: 10px;
+}
+
