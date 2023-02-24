@@ -3,10 +3,10 @@ import { User } from "../../models/index.js"
 class UserSeeder {
   static async seed() {
     const usersData = [
-      { email: "test1@gmail.com", cryptedPassword: "password" },
-      { email: "test2@gmail.com", cryptedPassword: "password" },
-      { email: "test3@gmail.com", cryptedPassword: "password" },
-      { email: "test4@gmail.com", cryptedPassword: "password" }
+      { email: "test1@gmail.com", password: "password" },
+      { email: "test2@gmail.com", password: "password" },
+      { email: "test3@gmail.com", password: "password" },
+      { email: "test4@gmail.com", password: "password" }
     ]
 
     for (const singleUsersData of usersData) {

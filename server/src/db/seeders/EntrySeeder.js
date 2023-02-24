@@ -15,7 +15,9 @@ class EntrySeeder {
         date: "2022-02-01",
         title: "Stoic thoughts #1",
         journalEntry:
-          "The happiness of your life depends upon the quality of your thoughts. - Marcus Aurelius",
+          `Stoicism is a philosophical school of thought that originated in ancient Greece and has gained a resurgence in modern times. It emphasizes the development of self-control and rationality in the face of adversity, and the acceptance of the things that are beyond our control. Stoicism teaches that the most important thing we can control is our own thoughts, feelings, and actions, and that we can find lasting happiness and tranquility by living in accordance with nature and reason.
+
+          The Stoics believed that by cultivating virtue and living in accordance with nature, we can live a meaningful and fulfilling life. They taught that we should focus on the present moment and not dwell on the past or worry about the future, and that we should treat others with kindness and compassion. Stoicism has been influential in many areas of life, from personal development to business management, and its principles continue to resonate with people today who seek to live a more intentional and fulfilling life.`,
       },
       {
         userId: user.id,

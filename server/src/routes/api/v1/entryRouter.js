@@ -1,13 +1,18 @@
 import express from "express";
 import { ValidationError } from "objection";
-import { Entry } from "../../../models/index.js";
+import { Entry, User } from "../../../models/index.js";
+
 
 const entryRouter = new express.Router()
 
 entryRouter.get("/", async (req, res) => {
   try {
-    const entries = await Entry.query()
-    res.status(200).json({ entries })
+    const userId = req.user.id
+    const currentUser = await User.query().findById(userId)
+
+    const userEntries = await currentUser.$relatedQuery("entries")
+    console.log(userEntries)
+    res.status(200).json({ entries: userEntries })
   } catch(error) {
     res.status(500).json({ errors: error })
   }
@@ -15,7 +20,6 @@ entryRouter.get("/", async (req, res) => {
 
 entryRouter.post("/", async (req, res) => {
   const { body } = req
-  // const userId = req.user.id
   body.userId = req.user.id 
   try {
     const newEntry = await Entry.query().insertAndFetch(body)

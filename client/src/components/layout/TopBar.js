@@ -20,21 +20,31 @@ const TopBar = ({ user }) => {
     </li>,
   ];
 
+  let dashLink;
+  if (user) {
+    dashLink = <Link to="/dashboard">Dashboard</Link>;
+  }
+
   return (
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text">App</li>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="menu-text" to="/">
+              Journey
+            </Link>
           </li>
+          <li>{dashLink}</li>
         </ul>
       </div>
       <div className="top-bar-right">
-        <ul className="menu">{user ? authenticatedListItems : unauthenticatedListItems}</ul>
+        <ul className="menu">
+          {user ? authenticatedListItems : unauthenticatedListItems}
+        </ul>
       </div>
     </div>
   );
 };
 
 export default TopBar;
+

@@ -26,21 +26,24 @@ const EntryListItem = ({ entry, currentUser, deleteEntry, entryList, setEntryLis
     />
   }
 
-  let deleteButton
-  let editButton
-  if (currentUser && currentUser.id === entry.userId){
-    deleteButton = <button className='button btn' onClick={handleDelete}>Delete</button>
-    editButton = <button className='button btn' onClick={handleEdit}>Edit</button>
+  const cutString = (string) => {
+    let stringArray = string.split(" ")
+    let newArray = [] 
+    for(let i = 0; i < 6; i++) {
+      newArray.push(stringArray[i])
+    }
+    return newArray.join(" ")
   }
+
   return (
     <div className='entryListItem'>
       <Link to={`/entries/${entry.id}`}>{entry.title}</Link>
       <p>{entry.date}</p>
-      <p>{entry.journalEntry}</p>
+      <p>{cutString(entry.journalEntry)}...</p>
 
       <div>
-        {deleteButton}
-        {editButton}
+        <button className='button btn' onClick={handleDelete}>Delete</button>
+        <button className='button btn' onClick={handleEdit}>Edit</button>
         {editForm}
       </div>
     </div>
