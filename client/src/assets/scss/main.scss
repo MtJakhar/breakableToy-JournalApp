@@ -138,7 +138,7 @@ img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: auto;
   margin-bottom: 10%;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .journalDiv:hover {
@@ -167,6 +167,7 @@ img {
 
 .dashBoard {
   background-image: url("../images/wood-background-1.jpeg");
+  background-color: #817266;
   position: absolute;
   height:100%;
   width:100%;
@@ -194,7 +195,7 @@ img {
 }
 
 .quoteText {
-  background-color: rgba(0, 0, 0, 0.5);
+  // background-color: rgba(0, 0, 0, 0.5);
   // margin: 5%;
   border-radius: 20%;
   color: white;
@@ -260,8 +261,7 @@ img {
   margin-bottom: 20px;
 }
 
-css
-Copy code
+
 .entry-show-page-container {
   display: flex;
   flex-direction: column;

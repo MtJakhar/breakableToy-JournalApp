@@ -36,7 +36,7 @@ const EntryShowPage = (props) => {
         <p className="entry-journal">{entry.journalEntry}</p>
       </div>
 
-      <button className="button" type="button" onClick={handleClick}>
+      <button className="button btn" type="button" onClick={handleClick}>
         Return to Entries
       </button>
     </div>
