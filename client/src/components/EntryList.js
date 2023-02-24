@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import EntryListItem from './EntryListItem'
-import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 
 const EntryList = (props) => {
@@ -45,15 +44,15 @@ const EntryList = (props) => {
 
   const entriesItems = entryList.map(entry => {
     return (
-      <div className='entryListItem cell small-12 medium-4 callout secondary'>
-      <EntryListItem
-        key={entry.id}
-        entry={entry}
-        currentUser={currentUser}
-        deleteEntry={deleteEntry}
-        entryList={entryList}
-        setEntryList={setEntryList}
-      />
+      <div className='entryListItem cell small-12 medium-4 callout secondary' key={entry.id}>
+        <EntryListItem
+          key={entry.id}
+          entry={entry}
+          currentUser={currentUser}
+          deleteEntry={deleteEntry}
+          entryList={entryList}
+          setEntryList={setEntryList}
+        />
       </div>
     )
   })

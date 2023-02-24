@@ -95,12 +95,6 @@ const NewEntryForm = (prop) => {
 
       <label htmlFor='journalEntry'>
         Journal Entry:
-        {/* <input 
-          type='text'
-          name='journalEntry'
-          onChange={handleInputChange}
-          value={newEntry.journalEntry}
-        /> */}
         <textarea
           className='textarea' 
           name='journalEntry'

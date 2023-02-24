@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignOutButton from "../authentication/SignOutButton";
-
+import { FiHome } from "react-icons/fi"
 const TopBar = ({ user }) => {
   const unauthenticatedListItems = [
     <li key="sign-in">
@@ -20,21 +20,32 @@ const TopBar = ({ user }) => {
     </li>,
   ];
 
+  let dashLink;
+  let homeIcon = <FiHome />
+  if (user) {
+    dashLink = <Link to="/dashboard">{homeIcon}</Link>;
+  }
+
   return (
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text">App</li>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="menu-text" to="/">
+              Journey
+            </Link>
           </li>
+          <li>{dashLink}</li>
         </ul>
       </div>
       <div className="top-bar-right">
-        <ul className="menu">{user ? authenticatedListItems : unauthenticatedListItems}</ul>
+        <ul className="menu">
+          {user ? authenticatedListItems : unauthenticatedListItems}
+        </ul>
       </div>
     </div>
   );
 };
 
 export default TopBar;
+
