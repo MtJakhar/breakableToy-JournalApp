@@ -23,6 +23,7 @@
     "@aws-sdk/client-s3": "^3.278.0",
     "body-parser": "^1.20.1",
     "react-calendar": "^4.0.0",
-    "react-icons": "^4.7.1"
+    "react-icons": "^4.7.1",
+    "reactjs-popup": "^2.0.5"
   }
 }

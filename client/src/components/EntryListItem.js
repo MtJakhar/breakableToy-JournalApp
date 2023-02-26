@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import EditEntryForm from './EditEntryForm'
+import React from 'react'
+import { useHistory } from 'react-router-dom'
 
-const EntryListItem = ({ entry, currentUser, deleteEntry, entryList, setEntryList }) => {
-  const [showEditEntryForm, setShowEditEntryForm] = useState(false)
+
+const EntryListItem = ({ entry, deleteEntry, showPopup, setShowPopup, setPopEntry }) => {
+
+  const history = useHistory();
 
   const handleDelete = (event) => {
     event.preventDefault()
@@ -12,18 +13,8 @@ const EntryListItem = ({ entry, currentUser, deleteEntry, entryList, setEntryLis
 
   const handleEdit = (event) => {
     event.preventDefault()
-    setShowEditEntryForm(showEditEntryForm ? false: true)
-  }
-
-  let editForm 
-  if (showEditEntryForm) {
-    editForm = <EditEntryForm 
-      entry={entry}
-      entryId={entry.id}
-      entryList={entryList}
-      setEntryList={setEntryList}
-      setShowEditEntryForm={setShowEditEntryForm}
-    />
+    setPopEntry(entry)
+    setShowPopup(showPopup ? false: true)
   }
 
   const cutString = (string) => {
@@ -35,16 +26,21 @@ const EntryListItem = ({ entry, currentUser, deleteEntry, entryList, setEntryLis
     return newArray.join(" ")
   }
 
-  return (
-    <div className='entryListItem'>
-      <Link to={`/entries/${entry.id}`}>{entry.title}</Link>
-      <p>{entry.date}</p>
-      <p>{cutString(entry.journalEntry)}...</p>
+  const handleEntryClick = () => {
+    history.push(`/entries/${entry.id}`);
+  };
 
+  return (
+    <div className='entryDiv'>
+      <img src={entry.imageUrl} className="listImage" onClick={handleEntryClick}/>
+      <div className='entryContent'>
+        <h5>{entry.title}</h5>
+        <p>{entry.date}</p>
+        <p>{cutString(entry.journalEntry)}...</p>
+      </div>
       <div>
-        <button className='button btn' onClick={handleDelete}>Delete</button>
-        <button className='button btn' onClick={handleEdit}>Edit</button>
-        {editForm}
+        <button className='button entry-btn' onClick={handleDelete}>Delete</button>
+        <button className='button entry-btn' onClick={handleEdit}>Edit</button>
       </div>
     </div>
   )

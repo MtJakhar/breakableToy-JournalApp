@@ -29,16 +29,16 @@ const EntryShowPage = (props) => {
   };
 
   return (
-    <div className="entry-show-page-container text-center">
-      <div className="entry-details-container">
-        <h2 className="entry-date">{entry.date}</h2>
-        <h4 className="entry-title">{entry.title}</h4>
-        <p className="entry-journal">{entry.journalEntry}</p>
+    <div>
+      <div>
+        <h2>{entry.date}</h2>
+        <h4>{entry.title}</h4>
+        <p>{entry.journalEntry}</p>
       </div>
 
-      <button className="button btn" type="button" onClick={handleClick}>
-        Return to Entries
-      </button>
+      <div>
+        <button className="button btn" type="button" onClick={handleClick}>Return to Entries</button>
+      </div>
     </div>
   )  
 }

@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import EntryListItem from './EntryListItem'
 import { useHistory } from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import EditEntryForm from './EditEntryForm'
 
 const EntryList = (props) => {
   const currentUser = props.currentUser
   const [entryList, setEntryList] = useState([])
+  const [showPopup, setShowPopup] = useState(false)
+  const [popEntry, setPopEntry] = useState("")
   const history = useHistory();
 
   const getEntries = async () => {
@@ -37,6 +41,7 @@ const EntryList = (props) => {
       console.error(`Error in fetch: ${error.message}`)
     }
   }
+
  
   useEffect(() => {
     getEntries()
@@ -44,7 +49,8 @@ const EntryList = (props) => {
 
   const entriesItems = entryList.map(entry => {
     return (
-      <div className='entryListItem cell small-12 medium-4 callout secondary' key={entry.id}>
+      //removed callout secondary from class
+      <div className='entryListItem cell small-12 medium-4' key={entry.id}>
         <EntryListItem
           key={entry.id}
           entry={entry}
@@ -52,14 +58,13 @@ const EntryList = (props) => {
           deleteEntry={deleteEntry}
           entryList={entryList}
           setEntryList={setEntryList}
+          setShowPopup={setShowPopup}
+          setPopEntry={setPopEntry}
+          showPopup={showPopup}
         />
       </div>
     )
   })
-
-  const handleClick = () => {
-    history.push('/dashboard');
-  };
 
   const handleNewEntryClick = () => {
     history.push('/entries/new')
@@ -75,8 +80,18 @@ const EntryList = (props) => {
       <div className="entryList grid-x grid-margin-x">
         {entriesItems}
       </div>
+      <Popup open={showPopup}>
+        <div className='popup'>
+          <EditEntryForm 
+            entry={popEntry}
+            entryId={popEntry.id}
+            entryList={entryList}
+            setEntryList={setEntryList}
+            setShowPopup={setShowPopup}
+          />
+        </div>
+      </Popup>
       {link}
-      <button className='button btn' onClick={handleClick}>Dashboard</button>
     </div>
     
   )

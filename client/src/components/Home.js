@@ -17,7 +17,7 @@ const Home = () => {
       <ImageSlider slides={SliderData} />
       <div className='textContainer section text-center a'>
         <h3>What are you writing for?</h3>
-        <p> Whether youre looking for a tool to record your daily emotions and activities in a reflective journal, keep track of milestones in a food diary or pregnancy journal, or even record your dreams in a dream journal, Journey has you covered.</p>
+        <p> Whether you're looking for a tool to record your daily emotions and activities in a reflective journal, keep track of milestones in a food diary or pregnancy journal, or even record your dreams in a dream journal, Journey has you covered.</p>
         <p>Journey gives you all the tools you need to focus on the ideas you want to preserve, rather than the process of writing itself.</p>
         <Link to="/users/new" className="button">
         Get Started
@@ -74,7 +74,7 @@ const Home = () => {
         </div>
       </div>
       <div className='footer'>
-        <h3>Ready to start writing? Sign Up Now!</h3>
+        <h3>Ready to start a Journey? Sign Up Now!</h3>
         <Link to="/users/new" className="button">
           Sign Up
         </Link>
