@@ -12,6 +12,7 @@
     table.string("date").notNullable()
     table.string("title")
     table.text("journalEntry").notNullable()
+    table.string("imageUrl")
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
     table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
   })

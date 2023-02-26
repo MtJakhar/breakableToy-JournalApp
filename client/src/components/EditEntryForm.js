@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import translateServerErrors from '../services/translateServerErrors.js'
 import ErrorList from './layout/ErrorList.js'
 
-const EditEntryForm = ({ entry, entryId, entryList, setEntryList, setShowEditEntryForm }) => {
+const EditEntryForm = ({ entry, entryId, entryList, setEntryList, setShowPopup }) => {
   const { date, title, journalEntry } = entry
   const [editedEntry, setEditedEntry] = useState({
     date: date || "",
@@ -44,7 +44,7 @@ const EditEntryForm = ({ entry, entryId, entryList, setEntryList, setShowEditEnt
     const updateId = entryList.findIndex(element => element.id === newlyEditedEntry.id)
     editedEntryList[updateId] = newlyEditedEntry
     setEntryList(editedEntryList)
-    setShowEditEntryForm(false)
+    setShowPopup(false)
   }
 
   const handleInputChange = (event) => {
@@ -55,39 +55,58 @@ const EditEntryForm = ({ entry, entryId, entryList, setEntryList, setShowEditEnt
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-    <ErrorList errors={errors} />
-    <label htmlFor='date'>
-      Date:
-      <input 
-        type='text'
-        name='date'
-        onChange={handleInputChange}
-        value={editedEntry.date}
-      />
-    </label>
+    <div>
+      <form onSubmit={handleSubmit}>
+      <ErrorList errors={errors} />
+      <label htmlFor='date'>
+        Date:
+        <input 
+          className='formInput'
+          type='text'
+          name='date'
+          onChange={handleInputChange}
+          value={editedEntry.date}
+        />
+      </label>
 
-    <label htmlFor='title'>
-      Title:
-      <input 
-        type='text'
-        name='title'
-        onChange={handleInputChange}
-        value={editedEntry.title}
-      />
-    </label>
+      <label htmlFor='title'>
+        Title:
+        <input
+          className='formInput' 
+          type='text'
+          name='title'
+          onChange={handleInputChange}
+          value={editedEntry.title}
+        />
+      </label>
 
-    <label htmlFor='journalEntry'>
-      Journal Entry:
-      <input 
-        type='text'
-        name='journalEntry'
-        onChange={handleInputChange}
-        value={editedEntry.journalEntry}
-      />
-    </label>
-    <input className='button' type='submit' value="Submit" />
-  </form>
+      <label htmlFor='journalEntry'>
+        Journal Entry:
+        <textarea
+          className='textarea' 
+          name='journalEntry'
+          onChange={handleInputChange}
+          rows="10"
+          cols="70"
+          value={editedEntry.journalEntry}
+        ></textarea>
+      </label>
+
+      <label htmlFor='imageUrl'>
+          Add Photo (image url):
+          <input 
+            className='formInput'
+            type='text' 
+            name='imageUrl'
+            onChange={handleInputChange} 
+            value={editedEntry.imageUrl}
+          />
+      </label>
+      <div className='btnGroup'>
+       <input className='button' type='submit' value="Submit" />
+      </div>
+    </form>
+    </div>
   )
 }
 

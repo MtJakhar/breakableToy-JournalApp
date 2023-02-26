@@ -14,6 +14,7 @@ class Entry extends Model {
         date: {type: "string", minLength: 1 },
         title: {type: "string", minLength: 1 },
         journalEntry: {type: "string", minLength: 1 },
+        imageUrl: {type: "string"}
       }
     }
   }

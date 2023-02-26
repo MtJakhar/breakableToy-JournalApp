@@ -26,6 +26,16 @@ body {
   height: 100%;
 }
 
+.top-bar{
+
+}
+
+// img {
+//   width: 100%;
+//   height: auto;
+//   object-fit: cover;
+// }
+
 // Home
 .textContainer {
   padding: 20px;
@@ -40,11 +50,11 @@ body {
   border-radius: 50%;
 }
 .why-pics {
-display: inline;
-margin: 0 auto;
-// margin-left: -25%; //centers the image
-height: 100%;
-width: auto;
+  display: inline;
+  margin: 0 auto;
+  // margin-left: -25%; //centers the image
+  height: 100%;
+  width: auto;
 }
 
 .section {
@@ -147,7 +157,6 @@ img {
   cursor: pointer;
 }
 
-
 .journalTitle {
   position: absolute;
   top: 20%;
@@ -204,13 +213,13 @@ img {
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .quoteHeader {
   margin: 5%;
   border-radius: 10%;
 }
-
 
 //Entries
 .entryContainer {
@@ -221,8 +230,15 @@ img {
   margin: 20px 0;
 }
 
+.formInput {
+  border: none;
+  border-radius: 10px;
+}
+
 .textarea {
-	min-height: 5em;
+  border: none;
+  border-radius: 20px;
+  min-height: 5em;
 	max-height: 50vh;
 	width: 100%;
 }
@@ -232,12 +248,34 @@ img {
   flex-wrap: wrap;
 }
 
-.entryListItem {
-  text-align: center;
+.listImage {
+  width: 100%;
+  height: 200px;
+  border-radius: 50% 50% 0px 0px;  
 }
 
-.btn {
-  margin: 10%;
+.entryDiv {
+  text-align: center;
+  border-radius: 50% 50% 15px 15px; 
+  background-color: #B9AEA0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.entryDiv:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.entryContent {
+ padding: 10px;
+}
+
+.entry-btn {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 ///new form
@@ -246,37 +284,27 @@ img {
   margin: 10%;
 }
 
-.newFormBtns {
+// btnGroup
+
+.btn {
+  margin: 1% 5%;
+}
+
+.btnGroup {
   text-align: center;
 }
 
+// popup
 
-.entry-show-container {
-  border-radius: 10px;
-  background-color: #f7f7f7;
+.popup {
+  // border: solid black;
+  height: 40rem;
+  width: 30rem;
+  border-radius: 20px;
   padding: 20px;
+  margin: auto;
+  background-color: #B9AEA0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
-.entry-show-content {
-  margin-bottom: 20px;
-}
-
-
-.entry-show-page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-.entry-details-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  padding: 20px;
-}
-
 
 

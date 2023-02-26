@@ -8,8 +8,10 @@ const NewEntryForm = (prop) => {
   const [newEntry, setNewEntry] = useState({
     date: "",
     title: "",
-    journalEntry: ""
+    journalEntry: "",
+    imageUrl:"https://iheartintelligence.com/wp-content/uploads/2015/09/Marcus-Aurelius.jpg"
   })
+  
   const [shouldRedirect, setShouldRedirect] = useState(false)
   const history = useHistory();
   const [errors, setErrors] = useState({})
@@ -62,7 +64,8 @@ const NewEntryForm = (prop) => {
     setNewEntry({
       date: "",
       title: "",
-      journalEntry: ""
+      journalEntry: "",
+      imageUrl:"https://iheartintelligence.com/wp-content/uploads/2015/09/Marcus-Aurelius.jpg"
     })
   }
 
@@ -74,8 +77,9 @@ const NewEntryForm = (prop) => {
     <form className="newForm" onSubmit={handleSubmit}>
       <ErrorList errors={errors} />
       <label htmlFor='date'>
-        Date:
+          Date:
         <input 
+          className='formInput'
           type='text'
           name='date'
           onChange={handleInputChange}
@@ -86,6 +90,7 @@ const NewEntryForm = (prop) => {
       <label htmlFor='title'>
         Title:
         <input 
+          className='formInput'
           type='text'
           name='title'
           onChange={handleInputChange}
@@ -104,7 +109,19 @@ const NewEntryForm = (prop) => {
           value={newEntry.journalEntry}
         ></textarea>
       </label>
-      <div className='newFormBtns'>
+
+      <label htmlFor='imageUrl'>
+				Add Photo (image url):
+				<input
+          className='formInput' 
+					type='text' 
+					name='imageUrl'
+					onChange={handleInputChange} 
+					value={newEntry.imageUrl}
+				/>
+			</label>
+
+      <div className='btnGroup'>
         <input className='button btn' type='submit' value="Submit" />
         <input className='button btn' type='button' value='Clear Form' onClick={clearForm} />
         <button className='button btn' onClick={handleClick}>Back</button>
