@@ -2,7 +2,7 @@ import express from "express";
 import userSessionsRouter from "./api/v1/userSessionsRouter.js";
 import usersRouter from "./api/v1/usersRouter.js";
 import clientRouter from "./clientRouter.js";
-import entryRouter from "./api/v1/EntryRouter.js";
+import entryRouter from "./api/v1/entryRouter.js";
 
 const rootRouter = new express.Router();
 rootRouter.use("/", clientRouter);
