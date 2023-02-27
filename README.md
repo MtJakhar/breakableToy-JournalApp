@@ -19,8 +19,11 @@ Usage
 To start using Journey, sign up for a new account or log in with the test credentials below:
 
 Email: marcusA@gmail.com
+
 Password: password
 
+
+Site: https://breakabletoy-journalapp.herokuapp.com/entries
 
 Once you're logged in, you will be directed to the dashboard, where you can see a journal which will take you to a list of all your journal entries. Click on any entry to go to the corresponding entry page, which shows the entry's title, date, summary, and attached picture (if any). From there, you can edit or delete the entry, or click on the image to go to the show page and see the full details of the entry.
 
