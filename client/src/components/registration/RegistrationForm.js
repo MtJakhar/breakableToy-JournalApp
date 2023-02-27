@@ -86,36 +86,44 @@ const RegistrationForm = () => {
   }
 
   return (
-    <div className="grid-container">
+    <div className="grid-container signRegForm">
       <h1>Register</h1>
       <form onSubmit={onSubmit}>
         <div>
           <label>
-            Email
-            <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
+            <input 
+              className='formInput'
+              type="text" 
+              name="email" 
+              value={userPayload.email} 
+              onChange={onInputChange} 
+              placeholder="Email"
+            />
             <FormError error={errors.email} />
           </label>
         </div>
         <div>
           <label>
-            Password
             <input
+              className='formInput'
               type="password"
               name="password"
               value={userPayload.password}
               onChange={onInputChange}
+              placeholder="Password"
             />
             <FormError error={errors.password} />
           </label>
         </div>
         <div>
           <label>
-            Password Confirmation
             <input
+              className='formInput'
               type="password"
               name="passwordConfirmation"
               value={userPayload.passwordConfirmation}
               onChange={onInputChange}
+              placeholder="Password Confirmation"
             />
             <FormError error={errors.passwordConfirmation} />
           </label>

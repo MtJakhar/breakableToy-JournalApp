@@ -12,10 +12,11 @@ class EntrySeeder {
     const mark = "https://iheartintelligence.com/wp-content/uploads/2015/09/Marcus-Aurelius.jpg"
     const seneca = "https://www.artlistings.com/var/digitized/storage/images/artlistings/magazine/see-nero-and-seneca-by-eduardo-barron-converse-at-the-prado-museum-70595/1721117-1-eng-GB/See-Nero-and-Seneca-by-Eduardo-Barron-Converse-at-the-Prado-Museum_img-800x500.jpg"
     const defImage = "https://get.pxhere.com/photo/monument-statue-ancient-italy-sculpture-capital-art-rome-statues-fountain-culture-history-heritage-carving-water-feature-trevi-fontana-mythology-ancient-rome-lazio-roma-capitale-fontana-di-trevi-ancient-history-671379.jpg"
+
     const entriesData = [
       {
         userId: user.id,
-        date: "2022-02-01",
+        date: "February 01 2023",
         title: "Stoic thoughts #1",
         journalEntry:
           `Stoicism is a philosophical school of thought that originated in ancient Greece and has gained a resurgence in modern times. It emphasizes the development of self-control and rationality in the face of adversity, and the acceptance of the things that are beyond our control. Stoicism teaches that the most important thing we can control is our own thoughts, feelings, and actions, and that we can find lasting happiness and tranquility by living in accordance with nature and reason.
@@ -25,7 +26,7 @@ class EntrySeeder {
       },
       {
         userId: user.id,
-        date: "2022-02-03",
+        date: "February 02 2023",
         title: "Stoic thoughts #2",
         journalEntry:
           "It does not matter what you bear, but how you bear it. - Seneca",
@@ -33,7 +34,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-05",
+        date: "February 03 2023",
         title: "Stoic thoughts #3",
         journalEntry:
           "The greater the difficulty, the more glory in surmounting it. Skillful pilots gain their reputation from storms and tempests. - Epictetus",
@@ -41,7 +42,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-07",
+        date: "February 04 2023",
         title: "Stoic thoughts #4",
         journalEntry:
           "Don't explain your philosophy. Embody it. - Epictetus",
@@ -49,7 +50,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-09",
+        date: "February 05 2023",
         title: "Stoic thoughts #5",
         journalEntry:
           "He who is brave is free. - Seneca",
@@ -57,7 +58,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-11",
+        date: "February 06 2023",
         title: "Stoic thoughts #6",
         journalEntry:
           "We should always be asking ourselves: Is this something that is, or is not, in my control? - Epictetus",
@@ -65,7 +66,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-13",
+        date: "February 07 2023",
         title: "Stoic thoughts #7",
         journalEntry:
           "To be calm is the highest achievement of the self. - Zen proverb",
@@ -73,7 +74,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-15",
+        date: "February 12 2023",
         title: "Stoic thoughts #8",
         journalEntry:
           "Happiness is not something ready made. It comes from your own actions. - Dalai Lama",
@@ -81,7 +82,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-17",
+        date: "February 13 2023",
         title: "Stoic thoughts #9",
         journalEntry:
           "The mind is everything. What you think you become. - Buddha",
@@ -89,7 +90,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-19",
+        date: "February 14 2023",
         title: "Stoic thoughts #10",
         journalEntry:
           "It is not death that a man should fear, but he should fear never beginning to live. - Marcus Aurelius",
@@ -97,7 +98,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-21",
+        date: "February 15 2023",
         title: "Stoic thoughts #11",
         journalEntry:
           "It is not that we have a short time to live, but that we waste a lot of it. - Seneca",
@@ -105,7 +106,7 @@ class EntrySeeder {
         },
       {
         userId: user.id,
-        date: "2022-02-23",
+        date: "February 16 2023",
         title: "Stoic thoughts #12",
         journalEntry:
           "The happiness of your life depends upon the quality of your thoughts. - Marcus Aurelius",

@@ -27,14 +27,9 @@ body {
 }
 
 .top-bar{
-
+  color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
-// img {
-//   width: 100%;
-//   height: auto;
-//   object-fit: cover;
-// }
 
 // Home
 .textContainer {
@@ -49,10 +44,33 @@ body {
   overflow: hidden;
   border-radius: 50%;
 }
+
+.secOne {
+  h3 {
+    margin-bottom: 3%;
+  }
+  p {
+    margin: 0 10% 5% 10%;
+  }
+}
+
+.reasons {
+  text-align: center;
+  padding: 25px;
+
+  h5 {
+    margin: 15px;
+  }
+
+  p {
+    text-align: center;
+    margin: 0 10% 0 10%;
+  }
+}
+
 .why-pics {
   display: inline;
   margin: 0 auto;
-  // margin-left: -25%; //centers the image
   height: 100%;
   width: auto;
 }
@@ -78,7 +96,6 @@ body {
   height: 700px;
 }
 
-  
 //Home Slider css
 .image {
   object-fit:cover;
@@ -129,6 +146,7 @@ body {
 }
 
 .footer {
+  color: white;
   background-color: #B9AEA0;
   margin: 0;
   padding: 1rem;
@@ -147,8 +165,7 @@ img {
   max-height: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: auto;
-  margin-bottom: 10%;
-  margin-top: 5%;
+  margin-top: 0;
 }
 
 .journalDiv:hover {
@@ -204,8 +221,6 @@ img {
 }
 
 .quoteText {
-  // background-color: rgba(0, 0, 0, 0.5);
-  // margin: 5%;
   border-radius: 20%;
   color: white;
   font-size: 28px;
@@ -228,19 +243,6 @@ img {
 .entryList {
   padding: 20px;
   margin: 20px 0;
-}
-
-.formInput {
-  border: none;
-  border-radius: 10px;
-}
-
-.textarea {
-  border: none;
-  border-radius: 20px;
-  min-height: 5em;
-	max-height: 50vh;
-	width: 100%;
 }
 
 .entryL {
@@ -278,10 +280,85 @@ img {
   margin-right: 5%;
 }
 
-///new form
+.entryShowContainer {
+  text-align: center;
+}
+
+.entryShow {
+  margin: 5% auto 5% auto;
+  background-color: #B9AEA0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 60%;
+  padding: 3rem;
+  border-radius: 10px;
+  color: white;
+
+  img {
+    border-radius: 10px;
+    width: 90%;
+    height: 400px;
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+
+  }
+  h4 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5%;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  p {
+    color: #000000;
+    padding: 10px;
+    border-radius: 10px;
+    background:white;
+    margin: auto;
+    width: 90%;
+  }
+}
+
+///Forms
 
 .newForm {
-  margin: 10%;
+  margin: 5%;
+  background-color: #B9AEA0;
+  padding: 5%;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.newFormTitle {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.formInput {
+  border-radius: 10px;
+}
+
+.textarea {
+  border-radius: 10px;
+  min-height: 5em;
+	max-height: 50vh;
+	width: 100%;
+}
+
+.signRegForm {
+  background-color: #B9AEA0;
+  font-weight: bolder;
+  color: white;
+  margin-top: 10%;
+  border-radius: 10px;
+  width: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 20px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 // btnGroup
@@ -294,10 +371,7 @@ img {
   text-align: center;
 }
 
-// popup
-
 .popup {
-  // border: solid black;
   height: 40rem;
   width: 30rem;
   border-radius: 20px;
