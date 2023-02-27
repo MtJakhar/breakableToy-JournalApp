@@ -29,14 +29,16 @@ const EntryShowPage = (props) => {
   };
 
   return (
-    <div>
-      <div>
-        <h2>{entry.date}</h2>
-        <h4>{entry.title}</h4>
+    <div className='entryShowContainer'>
+      <div className='entryShow'>
+        <img src={entry.imageUrl}/>
+        <h2>{entry.title}</h2>
+        <h4>{entry.date}</h4>
         <p>{entry.journalEntry}</p>
+        
       </div>
 
-      <div>
+      <div className='btnGroup'>
         <button className="button btn" type="button" onClick={handleClick}>Return to Entries</button>
       </div>
     </div>

@@ -9,9 +9,9 @@ const NewEntryForm = (prop) => {
     date: "",
     title: "",
     journalEntry: "",
-    imageUrl:"https://iheartintelligence.com/wp-content/uploads/2015/09/Marcus-Aurelius.jpg"
+    imageUrl:""
   })
-  
+
   const [shouldRedirect, setShouldRedirect] = useState(false)
   const history = useHistory();
   const [errors, setErrors] = useState({})
@@ -52,6 +52,9 @@ const NewEntryForm = (prop) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    if(newEntry.imageUrl === "") {
+      newEntry.imageUrl = "https://iheartintelligence.com/wp-content/uploads/2015/09/Marcus-Aurelius.jpg"
+    }
     postNewEntry(newEntry)
     clearForm()
   }
@@ -65,7 +68,7 @@ const NewEntryForm = (prop) => {
       date: "",
       title: "",
       journalEntry: "",
-      imageUrl:"https://iheartintelligence.com/wp-content/uploads/2015/09/Marcus-Aurelius.jpg"
+      imageUrl:""
     })
   }
 
@@ -75,31 +78,31 @@ const NewEntryForm = (prop) => {
 
   return (
     <form className="newForm" onSubmit={handleSubmit}>
+      <h1 className='newFormTitle'>Journal Entry</h1>
       <ErrorList errors={errors} />
       <label htmlFor='date'>
-          Date:
         <input 
           className='formInput'
           type='text'
           name='date'
           onChange={handleInputChange}
           value={newEntry.date}
+          placeholder="Enter Date"
         />
       </label>
 
       <label htmlFor='title'>
-        Title:
         <input 
           className='formInput'
           type='text'
           name='title'
           onChange={handleInputChange}
           value={newEntry.title}
+          placeholder="Enter Title"
         />
       </label>
 
       <label htmlFor='journalEntry'>
-        Journal Entry:
         <textarea
           className='textarea' 
           name='journalEntry'
@@ -107,19 +110,21 @@ const NewEntryForm = (prop) => {
           rows="50"
           cols="70"
           value={newEntry.journalEntry}
+          placeholder="Enter Text"
         ></textarea>
       </label>
 
       <label htmlFor='imageUrl'>
-				Add Photo (image url):
-				<input
+  
+        <input
           className='formInput' 
-					type='text' 
-					name='imageUrl'
-					onChange={handleInputChange} 
-					value={newEntry.imageUrl}
-				/>
-			</label>
+          type='text' 
+          name='imageUrl'
+          onChange={handleInputChange} 
+          value={newEntry.imageUrl}
+          placeholder="Add Photo (img url)"
+        />
+      </label>
 
       <div className='btnGroup'>
         <input className='button btn' type='submit' value="Submit" />
