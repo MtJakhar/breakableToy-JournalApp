@@ -1,5 +1,5 @@
 # breakableToy-JournalApp
-This project is the final project for launch academy. The app is a journal which allows you to take notes, schedule your day,  look at the days weather, track your food consumption 
+This project is the final project for launch academy. 
 
 Journey is a simple and intuitive journaling app that allows users to record their thoughts, experiences, and ideas in a private and secure way. With Journey, you can easily create, edit, and delete journal entries, attach pictures to your entries, and keep track of your personal growth and development over time.
 
