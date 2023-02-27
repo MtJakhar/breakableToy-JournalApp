@@ -9,7 +9,9 @@ To use Journey, simply clone the repository to your local machine and run the fo
 
 
 $ git clone https://github.com/MtJakhar/breakableToy-JournalApp.git
+
 $ cd breakableToy-JournalApp
+
 $ yarn install
 
 Then, open your favorite web browser and navigate to http://localhost:3000/ to access the app.
