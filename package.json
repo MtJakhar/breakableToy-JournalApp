@@ -17,7 +17,8 @@
     "e2e:run": "yarn workspace breakableToy-e2e e2e:run"
   },
   "engines": {
-    "node": "^16.18"
+    "node": "^16.18",
+    "yarn": "1.22.19"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.278.0",
