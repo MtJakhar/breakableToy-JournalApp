@@ -31,5 +31,7 @@ To create a new entry, click on the "New Entry" button on the dashboard or the e
 
 <img width="1440" alt="Screen Shot 2023-02-26 at 9 07 08 PM" src="https://user-images.githubusercontent.com/89097931/221460412-935a0f04-36fa-4bcd-bbe1-dbf6e1766cfd.png">
 
+Below is an example of a complete journal entry.
+
 <img width="1438" alt="Screen Shot 2023-02-26 at 9 12 20 PM" src="https://user-images.githubusercontent.com/89097931/221460467-bf3f6536-f8de-4982-bc0e-83adbde04e2a.png">
 
