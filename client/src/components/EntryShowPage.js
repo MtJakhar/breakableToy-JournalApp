@@ -13,7 +13,6 @@ const EntryShowPage = (props) => {
         throw new Error(`${response.status} (${response.statusText})`)
       }
       const fetchedEntry = await response.json()
-      console.log("entry is here", fetchedEntry.entry)
       setEntry(fetchedEntry.entry)
     } catch(error) {
       console.error(`Error in fetch: ${error.message}`)

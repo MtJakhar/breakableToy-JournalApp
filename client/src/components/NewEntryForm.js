@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import translateServerErrors from '../services/translateServerErrors.js'
 import ErrorList from './layout/ErrorList.js'
+import UploadImage from './UploadImage.js'
 import { Redirect } from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 
@@ -16,27 +17,41 @@ const NewEntryForm = (prop) => {
   const history = useHistory();
   const [errors, setErrors] = useState({})
 
-  const postNewEntry = async(newEntryData) => {
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    if (newEntry.imageUrl === "") {
+      newEntry.imageUrl = "https://iheartintelligence.com/wp-content/uploads/2015/09/Marcus-Aurelius.jpg"
+    }
+    const newUploadBody = new FormData()
+    newUploadBody.append("date", newEntry.date)
+    newUploadBody.append("title", newEntry.title)
+    newUploadBody.append("journalEntry", newEntry.journalEntry)
+    newUploadBody.append("imageUrl", newEntry.imageUrl)
+    console.log("formData", newUploadBody)
     try{
-      const response = await fetch("/api/v1/entry", {
-        method: "Post",
-        headers: new Headers({
-          "Content-Type": "application/json"
-        }),
-        body: JSON.stringify(newEntryData)
-      })
-
-      if (!response.ok) {
-        if (response.status === 422) {
+      if (Object.keys(errors).length === 0) {
+        const response = await fetch("/api/v1/entry", {
+          method: "Post",
+          headers: new Headers({
+            "Accept": "image/jpeg"
+          }),
+          body: newUploadBody
+        })
+        console.log("response", response)
+      
+        if (!response.ok) {
+          if (response.status === 422) {
+            const body = await response.json()
+            const newErrors = translateServerErrors(body.errors)
+            return setErrors(newErrors)
+          } else {
+            throw new Error(`${response.status} (${response.statusText})`)
+          }
+        } else{
           const body = await response.json()
-          const newErrors = translateServerErrors(body.errors)
-          return setErrors(newErrors)
-        } else {
-          throw new Error(`${response.status} (${response.statusText})`)
+          clearForm()
+          setShouldRedirect(true)
         }
-      } else{
-        const body = await response.json()
-        setShouldRedirect(true)
       }
     } catch(error) {
       console.error(`Error in fetch: ${error.message}`)
@@ -48,15 +63,6 @@ const NewEntryForm = (prop) => {
       ...newEntry,
       [event.currentTarget.name]: event.currentTarget.value
     })
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    if(newEntry.imageUrl === "") {
-      newEntry.imageUrl = "https://iheartintelligence.com/wp-content/uploads/2015/09/Marcus-Aurelius.jpg"
-    }
-    postNewEntry(newEntry)
-    clearForm()
   }
 
   const handleClick = () => {
@@ -113,18 +119,11 @@ const NewEntryForm = (prop) => {
           placeholder="Enter Text"
         ></textarea>
       </label>
-
-      <label htmlFor='imageUrl'>
-  
-        <input
-          className='formInput' 
-          type='text' 
-          name='imageUrl'
-          onChange={handleInputChange} 
-          value={newEntry.imageUrl}
-          placeholder="Add Photo (img url)"
-        />
-      </label>
+      
+      <UploadImage 
+        newEntry={newEntry}
+        setNewEntry={setNewEntry}
+      />
 
       <div className='btnGroup'>
         <input className='button btn' type='submit' value="Submit" />
