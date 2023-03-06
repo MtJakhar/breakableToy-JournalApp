@@ -1,7 +1,7 @@
 import express from "express";
 import { ValidationError } from "objection";
 import { Entry, User } from "../../../models/index.js";
-
+import uploadImage from "../../../services/uploadImage.js"
 
 const entryRouter = new express.Router()
 
@@ -18,10 +18,19 @@ entryRouter.get("/", async (req, res) => {
   }
 })
 
-entryRouter.post("/", async (req, res) => {
+entryRouter.post("/", uploadImage.single("imageUrl"), async (req, res) => {
   const { body } = req
   body.userId = req.user.id 
+  let image = ""
+
+  if (req.file) {
+    image = req.file.location
+    body.imageUrl = image
+    console.log("this is if image", image)
+  }
+  console.log("this is the body.imageUrl before route", body.imageUrl)
   try {
+    console.log("this is the body in route", body)
     const newEntry = await Entry.query().insertAndFetch(body)
     return res.status(201).json({ newEntry })
   } catch(error) {
